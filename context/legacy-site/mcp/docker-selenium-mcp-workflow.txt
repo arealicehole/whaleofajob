@@ -1,0 +1,4 @@
+now i want you to run the app in docker and then once thts done succesfully use selenium to 
+  interact with the app and tst all the features and functions adn then use the docker 
+  console/temrinal to keep track of everything  on that side adn use thoe two mcps and their tools 
+  to create a debug and solution loop until it works perfectly then save the image updateed

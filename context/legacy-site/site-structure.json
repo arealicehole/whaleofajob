@@ -1,0 +1,131 @@
+{
+  "siteName": "Yzagere Enterprises - WhaleOfAJob.com",
+  "businessInfo": {
+    "name": "Yzagere Enterprises",
+    "founded": "1983",
+    "founder": "Paul Yzagere Sr.",
+    "type": "Third-generation family-owned business",
+    "location": {
+      "city": "Glendale",
+      "state": "Arizona",
+      "serviceAreas": ["Glendale", "West Valley", "Phoenix Metro Area"]
+    },
+    "yearsInBusiness": "40+"
+  },
+  "pages": [
+    {
+      "url": "/",
+      "title": "Home",
+      "description": "Main landing page"
+    },
+    {
+      "url": "/about-us/",
+      "title": "About Us",
+      "description": "Company history and information"
+    },
+    {
+      "url": "/services/irrigation-repair-near-me/",
+      "title": "Irrigation Repair Near Me",
+      "description": "#1 Rated Irrigation Repair serving the West Valley"
+    },
+    {
+      "url": "/services/sprinkler-repair-in-arizona/",
+      "title": "Sprinkler Repair in Arizona",
+      "description": "40 yr Pro Sprinkler Repair services"
+    },
+    {
+      "url": "/services/lawn-maintenance-in-arizona/",
+      "title": "Lawn Maintenance",
+      "description": "Unlock the Secret to Perfect Yard"
+    },
+    {
+      "url": "/services/lawn-mower-repair/",
+      "title": "Lawn Mower Repair",
+      "description": "5 Tips for Lawn Mower Repair: Guide to Saving Time and Money"
+    },
+    {
+      "url": "/outdoor-services-in-arizona/",
+      "title": "Outdoor Services in Arizona",
+      "description": "Comprehensive outdoor services"
+    },
+    {
+      "url": "/yzagere-enterprises-reviews/",
+      "title": "Reviews",
+      "description": "Top 10 Yzagere Enterprises Reviews You Can Trust"
+    },
+    {
+      "url": "/contact-form/",
+      "title": "Contact Form",
+      "description": "LET US KNOW HOW WE CAN HELP AND WE WILL CALL YOU ASAP!"
+    },
+    {
+      "url": "/category/services/landscaping/",
+      "title": "Landscaping Services",
+      "description": "Professional and affordable landscaping"
+    }
+  ],
+  "services": {
+    "main": [
+      "Sprinkler Repair & Installation",
+      "Irrigation Services",
+      "Lawn Care & Maintenance",
+      "Small Engine & Lawn Mower Repair",
+      "Landscaping Services"
+    ],
+    "detailed": {
+      "sprinkler": [
+        "Professional sprinkler system installation",
+        "Sprinkler repair and maintenance",
+        "Flood irrigation repair",
+        "System diagnostics",
+        "Emergency repairs"
+      ],
+      "irrigation": [
+        "Complex irrigation problem solving",
+        "Individual sprinkler troubleshooting",
+        "Efficient hydration systems",
+        "System optimization"
+      ],
+      "lawnCare": [
+        "Comprehensive lawn maintenance",
+        "Garden maintenance",
+        "Residential landscaping",
+        "Lawn health assessment"
+      ],
+      "mowerRepair": [
+        "Lawn mower maintenance",
+        "Small engine repair",
+        "Equipment maintenance",
+        "Troubleshooting and diagnostics"
+      ],
+      "landscaping": [
+        "Landscape design",
+        "Garden maintenance",
+        "Outdoor enhancements",
+        "Custom solutions"
+      ]
+    }
+  },
+  "marketingMessages": [
+    "Family Owned in Glendale, AZ since 1983!",
+    "No Job too Big or Small!",
+    "Call us sprinkler doctors",
+    "We're here to solve all your irrigation problems!",
+    "A staple in Glendale and the West Valley for over 40 years",
+    "Committed to quality and customer satisfaction",
+    "Trust Yzagere Enterprises for all your outdoor needs",
+    "Top 10 Yzagere Enterprises Reviews You Can Trust",
+    "Unlock the Secret to Perfect Yard",
+    "5 Tips for Lawn Mower Repair: Guide to Saving Time and Money",
+    "A lush, green lawn is within your reach!",
+    "#1 Rated Irrigation Repair Near Me"
+  ],
+  "callToAction": {
+    "primary": "LET US KNOW HOW WE CAN HELP AND WE WILL CALL YOU ASAP!",
+    "secondary": [
+      "Schedule an appointment",
+      "Contact us to learn more",
+      "Get a Quote Today!"
+    ]
+  }
+}

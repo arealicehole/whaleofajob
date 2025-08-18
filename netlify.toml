@@ -1,0 +1,28 @@
+[build]
+  command = "npm ci && npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Redirects for old URLs to new structure
+[[redirects]]
+  from = "/sprinkler-repair/*"
+  to = "/services/#sprinkler-panel"
+  status = 301
+
+[[redirects]]
+  from = "/small-engine-repair/*"
+  to = "/services/#engine-panel"
+  status = 301
+
+[[redirects]]
+  from = "/junk-hauling/*"
+  to = "/services/#junk-panel"
+  status = 301
+
+[[redirects]]
+  from = "/service-areas/*"
+  to = "/services/#service-areas"
+  status = 301

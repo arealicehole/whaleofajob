@@ -1,0 +1,12 @@
+# Robots.txt for Yzagere Enterprises
+# https://www.yzagere.com
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location (to be added when generated)
+# Sitemap: https://www.yzagere.com/sitemap.xml
+
+# Crawl delay (optional, be nice to servers)
+Crawl-delay: 1

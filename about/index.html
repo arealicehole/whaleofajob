@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Yzagere Enterprises | Family-Owned Since 1983 | Glendale, AZ</title>
+  <meta name="description" content="Founded in 1983 by Paul Yzagere Sr., Yzagere Enterprises is a third-generation family business serving Glendale and West Valley with 40+ years of quality home services. Learn our story of commitment and craftsmanship.">
+  <link rel="canonical" href="https://yzagere.com/about/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yzagere.com/about/">
+  <meta property="og:title" content="About Yzagere Enterprises | Family-Owned Since 1983">
+  <meta property="og:description" content="Founded in 1983 by Paul Yzagere Sr., we're a third-generation family business with 40+ years of quality home services in Glendale and West Valley.">
+  <meta property="og:image" content="https://yzagere.com/images/og-about.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yzagere.com/about/">
+  <meta property="twitter:title" content="About Yzagere Enterprises | Family-Owned Since 1983">
+  <meta property="twitter:description" content="Third-generation family business with 40+ years of quality home services in Glendale and West Valley.">
+  <meta property="twitter:image" content="https://yzagere.com/images/og-about.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <!-- Preconnects for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- CSS imports -->
+  <link rel="stylesheet" href="/src/styles/tokens.css">
+  <link rel="stylesheet" href="/src/styles/base.css">
+  <link rel="stylesheet" href="/src/styles/components.css">
+  <link rel="stylesheet" href="/src/styles/retro-theme.css">
+  
+  <!-- Google Fonts for Retro Theme -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom Timeline Styles -->
+  <style>
+    /* Timeline Layout Styles */
+    .timeline-hero {
+      background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-primary) 100%);
+      color: white;
+      padding: 4rem 0 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .timeline-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF2D7D' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm-30 0c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+      opacity: 0.3;
+    }
+    
+    .timeline-hero__content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .timeline-hero__title {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 20px rgba(255, 45, 125, 0.5);
+      animation: neon-pulse 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes neon-pulse {
+      from { text-shadow: 0 0 20px rgba(255, 45, 125, 0.5); }
+      to { text-shadow: 0 0 30px rgba(255, 45, 125, 0.8), 0 0 40px rgba(22, 224, 189, 0.4); }
+    }
+    
+    .timeline-hero__subtitle {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.2rem;
+      opacity: 0.9;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    
+    /* Timeline Styles */
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+      transform: translateX(-50%);
+      box-shadow: 0 0 10px rgba(255, 45, 125, 0.5);
+    }
+    
+    .timeline__item {
+      position: relative;
+      margin: 4rem 0;
+      opacity: 0;
+      animation: slideInTimeline 0.8s ease-out forwards;
+    }
+    
+    .timeline__item:nth-child(1) { animation-delay: 0.2s; }
+    .timeline__item:nth-child(2) { animation-delay: 0.4s; }
+    .timeline__item:nth-child(3) { animation-delay: 0.6s; }
+    .timeline__item:nth-child(4) { animation-delay: 0.8s; }
+    
+    @keyframes slideInTimeline {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .timeline__item--left .timeline__content {
+      margin-right: 60%;
+      text-align: right;
+      padding-right: 2rem;
+    }
+    
+    .timeline__item--right .timeline__content {
+      margin-left: 60%;
+      text-align: left;
+      padding-left: 2rem;
+    }
+    
+    .timeline__marker {
+      position: absolute;
+      left: 50%;
+      top: 1rem;
+      width: 20px;
+      height: 20px;
+      background: var(--color-secondary);
+      border: 4px solid var(--color-primary);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 15px rgba(22, 224, 189, 0.7);
+      z-index: 2;
+    }
+    
+    .timeline__year {
+      font-family: 'Orbitron', monospace;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--color-primary);
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 10px rgba(255, 45, 125, 0.3);
+    }
+    
+    .timeline__title {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-dark);
+      margin-bottom: 1rem;
+    }
+    
+    .timeline__text {
+      font-family: 'Space Mono', monospace;
+      line-height: 1.6;
+      color: var(--color-dark);
+      opacity: 0.8;
+    }
+    
+    /* Asymmetric Typography Sections */
+    .typography-section {
+      padding: 6rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .typography-section--values {
+      background: var(--color-off-white);
+    }
+    
+    .typography-section--team {
+      background: linear-gradient(45deg, var(--color-off-white-dark) 0%, var(--color-off-white) 100%);
+    }
+    
+    .typography-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .typography-grid--reverse {
+      grid-template-columns: 2fr 1fr;
+    }
+    
+    .typography__header {
+      position: sticky;
+      top: 2rem;
+    }
+    
+    .typography__title {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(3rem, 6vw, 6rem);
+      font-weight: 900;
+      color: var(--color-primary);
+      line-height: 0.9;
+      margin-bottom: 1rem;
+      writing-mode: horizontal-tb;
+    }
+    
+    .typography__subtitle {
+      font-family: 'Space Mono', monospace;
+      font-size: 1rem;
+      color: var(--color-dark);
+      opacity: 0.7;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    
+    .typography__content {
+      display: grid;
+      gap: 3rem;
+    }
+    
+    .typography__item {
+      border-left: 3px solid var(--color-secondary);
+      padding-left: 2rem;
+      position: relative;
+    }
+    
+    .typography__item::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      background: var(--color-secondary);
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(22, 224, 189, 0.5);
+    }
+    
+    .typography__item-title {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-dark);
+      margin-bottom: 0.8rem;
+    }
+    
+    .typography__item-text {
+      font-family: 'Space Mono', monospace;
+      line-height: 1.6;
+      color: var(--color-dark);
+      opacity: 0.8;
+    }
+    
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 2rem;
+      }
+      
+      .timeline__item--left .timeline__content,
+      .timeline__item--right .timeline__content {
+        margin: 0;
+        margin-left: 4rem;
+        text-align: left;
+        padding-left: 2rem;
+        padding-right: 0;
+      }
+      
+      .timeline__marker {
+        left: 2rem;
+      }
+      
+      .typography-grid,
+      .typography-grid--reverse {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .typography__title {
+        font-size: clamp(2rem, 8vw, 4rem);
+      }
+      
+      .timeline-hero {
+        padding: 3rem 0 2rem;
+      }
+    }
+  </style>
+  
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "HomeAndConstructionBusiness",
+      "name": "Yzagere Enterprises",
+      "description": "Family-owned home services business serving Glendale and West Valley since 1983",
+      "foundingDate": "1983",
+      "founder": {
+        "@type": "Person",
+        "name": "Paul Yzagere Sr."
+      },
+      "url": "https://yzagere.com",
+      "telephone": "+16239310846",
+      "email": "yzagere.enterprises@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "5314 W Glendale Ave",
+        "addressLocality": "Glendale",
+        "addressRegion": "AZ",
+        "postalCode": "85301",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Glendale",
+          "addressRegion": "AZ"
+        },
+        {
+          "@type": "City",
+          "name": "Peoria",
+          "addressRegion": "AZ"
+        },
+        {
+          "@type": "City",
+          "name": "Surprise",
+          "addressRegion": "AZ"
+        },
+        {
+          "@type": "City",
+          "name": "Goodyear",
+          "addressRegion": "AZ"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Home Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sprinkler & Irrigation Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Small Engine Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Junk Hauling"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Landscaping & Desert Maintenance"
+            }
+          }
+        ]
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__container">
+        <a href="/" class="nav__logo" aria-label="Yzagere Enterprises Home">
+          Yzagere Enterprises
+        </a>
+        
+        <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="nav__toggle-line"></span>
+          <span class="nav__toggle-line"></span>
+          <span class="nav__toggle-line"></span>
+        </button>
+        
+        <ul class="nav__list" role="list">
+          <li class="nav__item">
+            <a href="/" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="/sprinkler-repair/" class="nav__link">Services</a>
+          </li>
+          <li class="nav__item">
+            <a href="/about/" class="nav__link nav__link--active" aria-current="page">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="/contact/" class="nav__link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Minimal Hero Section -->
+    <section class="timeline-hero">
+      <div class="container">
+        <div class="timeline-hero__content">
+          <h1 class="timeline-hero__title">Family Owned Since 1983</h1>
+          <p class="timeline-hero__subtitle">Three Generations • West Valley • Arizona</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline" aria-labelledby="timeline-heading">
+      <h2 id="timeline-heading" class="sr-only">Our Company Timeline</h2>
+      
+      <div class="timeline__item timeline__item--left">
+        <div class="timeline__marker"></div>
+        <div class="timeline__content">
+          <div class="timeline__year">1983</div>
+          <h3 class="timeline__title">The Beginning</h3>
+          <p class="timeline__text">
+            Paul Yzagere Sr. founded Yzagere Enterprises with a simple mission: provide honest, 
+            reliable home services to the growing Glendale community. Starting with basic lawn care 
+            and handyman services, we quickly built a reputation for quality work and fair pricing.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline__item timeline__item--right">
+        <div class="timeline__marker"></div>
+        <div class="timeline__content">
+          <div class="timeline__year">1995</div>
+          <h3 class="timeline__title">Service Expansion</h3>
+          <p class="timeline__text">
+            Recognizing the unique needs of Arizona homeowners, we expanded our expertise to include 
+            specialized sprinkler and irrigation repair. The desert climate demanded water-efficient 
+            solutions, and we became the go-to experts for complex irrigation systems across the West Valley.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline__item timeline__item--left">
+        <div class="timeline__marker"></div>
+        <div class="timeline__content">
+          <div class="timeline__year">2010</div>
+          <h3 class="timeline__title">Full-Service Provider</h3>
+          <p class="timeline__text">
+            Adding small engine repair and junk hauling services, we became a comprehensive home 
+            service provider. Our commitment to staying current with technology while maintaining 
+            old-fashioned service values set us apart in an increasingly competitive market.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline__item timeline__item--right">
+        <div class="timeline__marker"></div>
+        <div class="timeline__content">
+          <div class="timeline__year">TODAY</div>
+          <h3 class="timeline__title">Third Generation Strong</h3>
+          <p class="timeline__text">
+            Now proudly operated by the third generation of the Yzagere family, we've maintained 
+            the founding principles of integrity, quality, and customer satisfaction while adapting 
+            to serve modern needs. Many of our customers have been with us for decades.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section - Asymmetric Typography -->
+    <section class="typography-section typography-section--values" aria-labelledby="values-heading">
+      <div class="typography-grid">
+        <div class="typography__header">
+          <h2 id="values-heading" class="typography__title">Our Core Values</h2>
+          <p class="typography__subtitle">Principles passed down through three generations</p>
+        </div>
+        
+        <div class="typography__content">
+          <div class="typography__item">
+            <h3 class="typography__item-title">Integrity First</h3>
+            <p class="typography__item-text">
+              Honest communication, fair pricing, and doing what's right for our customers. 
+              No surprise charges, no unnecessary work—just straight talk and reliable service.
+            </p>
+          </div>
+          
+          <div class="typography__item">
+            <h3 class="typography__item-title">Quality Craftsmanship</h3>
+            <p class="typography__item-text">
+              40+ years of experience means we know how to do things right the first time. 
+              Quality materials, proven techniques, and we stand behind our work.
+            </p>
+          </div>
+          
+          <div class="typography__item">
+            <h3 class="typography__item-title">Customer Satisfaction</h3>
+            <p class="typography__item-text">
+              Your satisfaction is our success. We're not done until you're completely happy. 
+              Many customers have been with us for decades.
+            </p>
+          </div>
+          
+          <div class="typography__item">
+            <h3 class="typography__item-title">Community Focus</h3>
+            <p class="typography__item-text">
+              We live and work in the communities we serve. Supporting local businesses 
+              and neighbors isn't just good business—it's who we are.
+            </p>
+          </div>
+          
+          <div class="typography__item">
+            <h3 class="typography__item-title">Environmental Responsibility</h3>
+            <p class="typography__item-text">
+              Water-efficient irrigation, responsible disposal, and recycling programs. 
+              We're committed to protecting Arizona's precious resources.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section - Asymmetric Typography (Reverse) -->
+    <section class="typography-section typography-section--team" aria-labelledby="team-heading">
+      <div class="typography-grid typography-grid--reverse">
+        <div class="typography__content">
+          <div class="typography__item">
+            <h3 class="typography__item-title">Skilled Technicians</h3>
+            <p class="typography__item-text">
+              Decades of combined experience in irrigation systems, small engine repair, 
+              and waste management. Continuous training keeps skills sharp and current.
+            </p>
+          </div>
+          
+          <div class="typography__item">
+            <h3 class="typography__item-title">Customer Service Excellence</h3>
+            <p class="typography__item-text">
+              From your first call to project completion, friendly and professional service. 
+              We're here to answer questions and ensure your complete satisfaction.
+            </p>
+          </div>
+          
+          <div class="typography__item">
+            <h3 class="typography__item-title">Family Leadership</h3>
+            <p class="typography__item-text">
+              Led by the Yzagere family, we maintain the personal touch and accountability 
+              that only comes from owners who care about their reputation and community.
+            </p>
+          </div>
+          
+          <div class="typography__item">
+            <h3 class="typography__item-title">Licensed & Insured</h3>
+            <p class="typography__item-text">
+              Full licensing and insurance protection gives you peace of mind. 
+              We meet all legal requirements and maintain coverage for your protection.
+            </p>
+          </div>
+        </div>
+        
+        <div class="typography__header">
+          <h2 id="team-heading" class="typography__title">Why Choose Us</h2>
+          <p class="typography__subtitle">Experience • Trust • Results</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="services" style="background: var(--color-primary); color: white;" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="services__header">
+          <h2 id="cta-heading" class="services__title" style="color: white;">Ready to Experience the Yzagere Difference?</h2>
+          <p class="services__subtitle" style="color: white; opacity: 0.9;">
+            Join thousands of satisfied customers who trust us with their home service needs. 
+            Experience the quality and reliability that three generations have built.
+          </p>
+        </div>
+        
+        <div style="text-align: center;">
+          <div class="hero__actions" style="justify-content: center;">
+            <a href="/contact/" class="form__button" style="background: white; color: var(--color-primary);">
+              Get Free Estimate
+            </a>
+            <a href="tel:+16239310846" class="form__button form__button--outline" style="border-color: white; color: white;">
+              Call (623) 931-0846
+            </a>
+          </div>
+          
+          <div style="margin-top: 2rem;">
+            <p style="color: white; opacity: 0.9;">
+              <strong>Sprinkler Repair • Small Engine Repair • Junk Hauling • Landscaping</strong><br>
+              Monday-Friday 5:00 AM - 5:00 PM • Serving the West Valley Since 1983
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__content">
+        <!-- Business Info -->
+        <section class="footer__section">
+          <h3 class="footer__title">Yzagere Enterprises</h3>
+          <div class="footer__text">
+            <p>Family-owned since 1983</p>
+            <p>5314 W Glendale Ave<br>Glendale, AZ 85301</p>
+            <p><a href="tel:+16239310846" class="footer__link">(623) 931-0846</a></p>
+            <p><a href="mailto:yzagere.enterprises@gmail.com" class="footer__link">yzagere.enterprises@gmail.com</a></p>
+          </div>
+        </section>
+
+        <!-- Services -->
+        <section class="footer__section">
+          <h3 class="footer__title">Our Services</h3>
+          <ul class="footer__links">
+            <li><a href="/sprinkler-repair/" class="footer__link">Sprinkler Repair</a></li>
+            <li><a href="/small-engine-repair/" class="footer__link">Small Engine Repair</a></li>
+            <li><a href="/junk-hauling/" class="footer__link">Junk Hauling</a></li>
+            <li><a href="/about/" class="footer__link">Landscaping</a></li>
+          </ul>
+        </section>
+
+        <!-- Service Areas -->
+        <section class="footer__section">
+          <h3 class="footer__title">Service Areas</h3>
+          <ul class="footer__links">
+            <li><a href="/service-areas/" class="footer__link">Glendale</a></li>
+            <li><a href="/service-areas/" class="footer__link">Peoria</a></li>
+            <li><a href="/service-areas/" class="footer__link">Surprise</a></li>
+            <li><a href="/service-areas/" class="footer__link">Goodyear</a></li>
+            <li><a href="/service-areas/" class="footer__link">View All Areas</a></li>
+          </ul>
+        </section>
+
+        <!-- Company Info -->
+        <section class="footer__section">
+          <h3 class="footer__title">Company</h3>
+          <ul class="footer__links">
+            <li><a href="/about/" class="footer__link">About Us</a></li>
+            <li><a href="/contact/" class="footer__link">Contact</a></li>
+            <li><a href="/service-areas/" class="footer__link">Service Areas</a></li>
+            <li><a href="tel:+16239310846" class="footer__link">Emergency Service</a></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          &copy; 2024 Yzagere Enterprises. All rights reserved. | Licensed, Bonded & Insured
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navToggle = document.querySelector('.nav__toggle');
+      const navList = document.querySelector('.nav__list');
+      
+      if (navToggle && navList) {
+        navToggle.addEventListener('click', function() {
+          const isActive = navList.classList.contains('nav__list--active');
+          
+          navList.classList.toggle('nav__list--active');
+          navToggle.classList.toggle('nav__toggle--active');
+          navToggle.setAttribute('aria-expanded', !isActive);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

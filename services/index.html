@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services | Yzagere Enterprises | Sprinkler, Small Engine, Junk Hauling</title>
+  <meta name="description" content="Complete home services in Glendale and West Valley. Sprinkler repair, small engine repair, and junk hauling. Family-owned since 1983.">
+  <link rel="canonical" href="https://yzagere.com/services/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yzagere.com/services/">
+  <meta property="og:title" content="Our Services | Yzagere Enterprises">
+  <meta property="og:description" content="Complete home services: Sprinkler repair, small engine repair, and junk hauling throughout Glendale and West Valley.">
+  <meta property="og:image" content="https://yzagere.com/images/og-services.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yzagere.com/services/">
+  <meta property="twitter:title" content="Our Services | Yzagere Enterprises">
+  <meta property="twitter:description" content="Complete home services: Sprinkler repair, small engine repair, and junk hauling.">
+  <meta property="twitter:image" content="https://yzagere.com/images/og-services.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <!-- Preconnects for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- CSS imports -->
+  <link rel="stylesheet" href="/src/styles/tokens.css">
+  <link rel="stylesheet" href="/src/styles/base.css">
+  <link rel="stylesheet" href="/src/styles/components.css">
+  <link rel="stylesheet" href="/src/styles/retro-theme.css">
+  
+  <!-- Google Fonts for Retro Theme -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Service Tabs Custom Styles -->
+  <style>
+    /* Tab System - No Boxes! */
+    .services-hero {
+      padding: var(--space-3xl) 0;
+      text-align: center;
+      min-height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .services-hero h1 {
+      font-size: clamp(3rem, 8vw, 5rem);
+      margin-bottom: var(--space-lg);
+    }
+    
+    .services-tabs {
+      padding: var(--space-3xl) 0;
+      background: var(--dark-surface);
+    }
+    
+    .tabs {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+    }
+    
+    .tabs__nav {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-xs);
+      margin-bottom: var(--space-3xl);
+      border-bottom: 2px solid var(--neon-cyan);
+      padding-bottom: 0;
+      flex-wrap: wrap;
+    }
+    
+    .tabs__button {
+      background: transparent;
+      border: none;
+      color: var(--neon-cyan);
+      font-family: 'Orbitron', monospace;
+      font-size: var(--font-size-lg);
+      font-weight: 700;
+      padding: var(--space-md) var(--space-xl);
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .tabs__button:hover {
+      color: var(--neon-pink);
+      text-shadow: 0 0 10px currentColor;
+    }
+    
+    .tabs__button.active {
+      color: var(--neon-pink);
+      text-shadow: 0 0 20px currentColor;
+    }
+    
+    .tabs__button.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--neon-pink), var(--neon-cyan));
+      animation: glow 2s ease-in-out infinite;
+    }
+    
+    .tabs__content {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    
+    .tabs__content.active {
+      display: block;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .tab-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-3xl);
+      align-items: center;
+    }
+    
+    @media (max-width: 768px) {
+      .tab-panel {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .tab-panel__content {
+      color: var(--neon-cyan);
+    }
+    
+    .tab-panel__content h2 {
+      font-size: var(--font-size-3xl);
+      margin-bottom: var(--space-xl);
+      color: var(--neon-pink);
+      text-shadow: 0 0 20px currentColor;
+    }
+    
+    .service-list {
+      list-style: none;
+      padding: 0;
+      margin: var(--space-xl) 0;
+    }
+    
+    .service-list li {
+      padding: var(--space-md) 0;
+      border-bottom: 1px solid rgba(22, 224, 189, 0.2);
+      font-size: var(--font-size-lg);
+      position: relative;
+      padding-left: var(--space-xl);
+    }
+    
+    .service-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--neon-pink);
+      font-weight: bold;
+    }
+    
+    .tab-panel__image {
+      position: relative;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, rgba(255, 45, 125, 0.1), rgba(22, 224, 189, 0.1));
+      border: 2px solid var(--neon-cyan);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--font-size-6xl);
+      text-shadow: 0 0 30px currentColor;
+    }
+    
+    /* Service Areas Section */
+    .service-areas {
+      padding: var(--space-4xl) 0;
+      background: var(--dark-bg);
+    }
+    
+    .service-areas h2 {
+      text-align: center;
+      font-size: var(--font-size-4xl);
+      margin-bottom: var(--space-3xl);
+      color: var(--neon-pink);
+    }
+    
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-md);
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+    }
+    
+    .area-item {
+      text-align: center;
+      padding: var(--space-lg);
+      color: var(--neon-cyan);
+      border: 1px solid rgba(22, 224, 189, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .area-item:hover {
+      border-color: var(--neon-pink);
+      color: var(--neon-pink);
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 45, 125, 0.3);
+    }
+    
+    /* CTA Section */
+    .services-cta {
+      padding: var(--space-4xl) 0;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(255, 45, 125, 0.1), transparent);
+    }
+    
+    .services-cta h2 {
+      font-size: var(--font-size-3xl);
+      margin-bottom: var(--space-xl);
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__container">
+        <a href="/" class="nav__logo" aria-label="Yzagere Enterprises Home">
+          Yzagere Enterprises
+        </a>
+        
+        <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="nav__toggle-line"></span>
+          <span class="nav__toggle-line"></span>
+          <span class="nav__toggle-line"></span>
+        </button>
+        
+        <ul class="nav__list" role="list">
+          <li class="nav__item">
+            <a href="/" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="/services/" class="nav__link nav__link--active" aria-current="page">Services</a>
+          </li>
+          <li class="nav__item">
+            <a href="/about/" class="nav__link">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="/contact/" class="nav__link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Minimal Hero -->
+    <section class="services-hero">
+      <div class="container">
+        <h1>We Fix It All</h1>
+        <p class="hero__text">Professional home services across the West Valley</p>
+      </div>
+    </section>
+
+    <!-- Service Tabs Section -->
+    <section class="services-tabs">
+      <div class="tabs">
+        <div class="tabs__nav" role="tablist">
+          <button class="tabs__button active" role="tab" aria-selected="true" aria-controls="sprinkler-panel" id="sprinkler-tab">
+            Sprinkler Repair
+          </button>
+          <button class="tabs__button" role="tab" aria-selected="false" aria-controls="engine-panel" id="engine-tab">
+            Small Engine
+          </button>
+          <button class="tabs__button" role="tab" aria-selected="false" aria-controls="junk-panel" id="junk-tab">
+            Junk Hauling
+          </button>
+        </div>
+
+        <!-- Sprinkler Repair Tab -->
+        <div class="tabs__content active" role="tabpanel" id="sprinkler-panel" aria-labelledby="sprinkler-tab">
+          <div class="tab-panel">
+            <div class="tab-panel__content">
+              <h2>Sprinkler & Irrigation Repair</h2>
+              <p class="text-large">Call us the "Sprinkler Doctors!" With over 40 years of experience, we diagnose and fix all irrigation issues quickly and affordably.</p>
+              
+              <ul class="service-list">
+                <li>Valve repair and replacement</li>
+                <li>Timer and controller programming</li>
+                <li>Leak detection and repair</li>
+                <li>Sprinkler head adjustment and replacement</li>
+                <li>Drip system installation and repair</li>
+                <li>System winterization and startup</li>
+                <li>Emergency repair services</li>
+              </ul>
+              
+              <p><strong>Common Issues We Fix:</strong> Low water pressure, broken pipes, clogged nozzles, timer malfunctions, zone problems, and water waste issues.</p>
+            </div>
+            <div class="tab-panel__image">
+              💧
+            </div>
+          </div>
+        </div>
+
+        <!-- Small Engine Tab -->
+        <div class="tabs__content" role="tabpanel" id="engine-panel" aria-labelledby="engine-tab">
+          <div class="tab-panel">
+            <div class="tab-panel__content">
+              <h2>Small Engine Repair</h2>
+              <p class="text-large">Your local experts for lawn mowers, trimmers, blowers, and all small equipment. We service all major brands with honest pricing.</p>
+              
+              <ul class="service-list">
+                <li>Lawn mower tune-ups and repair</li>
+                <li>String trimmer and edger service</li>
+                <li>Leaf blower maintenance</li>
+                <li>Chain saw sharpening and repair</li>
+                <li>Generator service and maintenance</li>
+                <li>Pressure washer repair</li>
+                <li>Seasonal equipment preparation</li>
+              </ul>
+              
+              <p><strong>Brands We Service:</strong> Honda, Briggs & Stratton, Kohler, Kawasaki, Echo, Stihl, Husqvarna, Toro, and more.</p>
+            </div>
+            <div class="tab-panel__image">
+              🔧
+            </div>
+          </div>
+        </div>
+
+        <!-- Junk Hauling Tab -->
+        <div class="tabs__content" role="tabpanel" id="junk-panel" aria-labelledby="junk-tab">
+          <div class="tab-panel">
+            <div class="tab-panel__content">
+              <h2>Junk Hauling Services</h2>
+              <p class="text-large">From single item pickup to complete property cleanouts. Same-day service available with eco-friendly disposal practices.</p>
+              
+              <ul class="service-list">
+                <li>Furniture and appliance removal</li>
+                <li>Yard waste and debris cleanup</li>
+                <li>Estate and garage cleanouts</li>
+                <li>Construction debris removal</li>
+                <li>Office and commercial cleanouts</li>
+                <li>Hoarding cleanup assistance</li>
+                <li>Recycling and donation services</li>
+              </ul>
+              
+              <p><strong>No Job Too Big or Small:</strong> Whether it's one old couch or an entire house, we handle it all with professionalism and care.</p>
+            </div>
+            <div class="tab-panel__image">
+              🚛
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="service-areas">
+      <div class="container">
+        <h2>Serving the Entire West Valley</h2>
+        <div class="areas-grid">
+          <div class="area-item">Glendale</div>
+          <div class="area-item">Peoria</div>
+          <div class="area-item">Surprise</div>
+          <div class="area-item">Goodyear</div>
+          <div class="area-item">Avondale</div>
+          <div class="area-item">Buckeye</div>
+          <div class="area-item">Litchfield Park</div>
+          <div class="area-item">El Mirage</div>
+          <div class="area-item">Sun City</div>
+          <div class="area-item">Sun City West</div>
+          <div class="area-item">Tolleson</div>
+          <div class="area-item">Waddell</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="services-cta">
+      <div class="container">
+        <h2>Ready to Get Started?</h2>
+        <p class="text-large">Free estimates on all services. Same-day service available.</p>
+        <div class="hero__actions">
+          <a href="/contact/" class="form__button">
+            Get Your Free Estimate
+          </a>
+          <a href="tel:+16239310846" class="form__button form__button--secondary">
+            Call (623) 931-0846
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__info">
+          <h3 class="footer__title">Yzagere Enterprises</h3>
+          <p class="footer__text">Family-owned and operated since 1983</p>
+          <p class="footer__text">Licensed • Bonded • Insured</p>
+        </div>
+        
+        <div class="footer__contact">
+          <h4 class="footer__subtitle">Contact Us</h4>
+          <p class="footer__text">
+            <a href="tel:+16239310846" class="footer__link">(623) 931-0846</a>
+          </p>
+          <p class="footer__text">
+            <a href="mailto:yzagere.enterprises@gmail.com" class="footer__link">yzagere.enterprises@gmail.com</a>
+          </p>
+          <p class="footer__text">5314 W Glendale Ave<br>Glendale, AZ 85301</p>
+        </div>
+        
+        <div class="footer__hours">
+          <h4 class="footer__subtitle">Business Hours</h4>
+          <p class="footer__text">Monday - Friday: 5:00 AM - 5:00 PM</p>
+          <p class="footer__text">Saturday & Sunday: By Appointment</p>
+          <p class="footer__text">Emergency Service Available</p>
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2024 Yzagere Enterprises. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Tab JavaScript -->
+  <script>
+    // Tab functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.tabs__button');
+      const panels = document.querySelectorAll('.tabs__content');
+      
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // Remove active from all
+          tabs.forEach(t => {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          panels.forEach(p => p.classList.remove('active'));
+          
+          // Add active to clicked
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+          
+          // Show corresponding panel
+          const panelId = tab.getAttribute('aria-controls');
+          document.getElementById(panelId).classList.add('active');
+        });
+      });
+      
+      // Mobile nav toggle
+      const navToggle = document.querySelector('.nav__toggle');
+      const navList = document.querySelector('.nav__list');
+      
+      if (navToggle) {
+        navToggle.addEventListener('click', () => {
+          const isOpen = navList.classList.toggle('nav__list--active');
+          navToggle.classList.toggle('nav__toggle--active');
+          navToggle.setAttribute('aria-expanded', isOpen);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -35,6 +35,130 @@
   <link rel="stylesheet" href="/src/styles/retro-theme.css">
   <link rel="stylesheet" href="/assets/vendor/lite-yt-embed.css">
   
+  <!-- Custom homepage styles -->
+  <style>
+    /* Hero button layout - single row */
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      justify-content: center;
+      margin-top: var(--space-xl);
+    }
+    
+    @media (min-width: 992px) {
+      .hero__actions {
+        flex-wrap: nowrap;
+      }
+      
+      .hero__actions .form__button {
+        flex: 1;
+        min-width: 140px;
+        white-space: nowrap;
+      }
+    }
+    
+    /* Hero background with overlay */
+    .hero {
+      position: relative;
+      background-image: 
+        linear-gradient(135deg, rgba(13,13,13,0.95), rgba(255,45,125,0.1)),
+        linear-gradient(90deg, #0D0D0D 25%, transparent 25%),
+        linear-gradient(90deg, transparent 75%, #0D0D0D 75%);
+      background-size: cover, 20px 20px, 20px 20px;
+      background-position: center, 0 0, 10px 10px;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+    }
+    
+    /* Video showcase section */
+    .video-showcase {
+      padding: var(--space-4xl) 0;
+      background: var(--dark-surface);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .video-showcase::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--grid-pattern);
+      opacity: 0.1;
+      animation: grid-move 20s linear infinite;
+    }
+    
+    .video-showcase__header {
+      text-align: center;
+      margin-bottom: var(--space-3xl);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .video-showcase__title {
+      font-size: var(--font-size-4xl);
+      color: var(--neon-pink);
+      text-shadow: 0 0 20px currentColor;
+      margin-bottom: var(--space-md);
+    }
+    
+    .video-showcase__subtitle {
+      font-size: var(--font-size-xl);
+      color: var(--neon-cyan);
+      opacity: 0.9;
+    }
+    
+    .video-showcase__wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Custom lite-youtube styling */
+    lite-youtube {
+      border: 2px solid var(--neon-cyan);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 0 30px rgba(22,224,189,0.3);
+      transition: all 0.3s ease;
+      background-color: #000;
+    }
+    
+    lite-youtube:hover {
+      box-shadow: 0 0 50px rgba(255,45,125,0.5);
+      transform: scale(1.02);
+      border-color: var(--neon-pink);
+    }
+    
+    lite-youtube .lty-playbtn {
+      border: 2px solid var(--neon-pink);
+      background-color: rgba(13,13,13,0.8);
+    }
+    
+    /* Services section with subtle pattern */
+    .services {
+      background-image: 
+        linear-gradient(180deg, transparent, rgba(22,224,189,0.02)),
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 10px,
+          rgba(22,224,189,0.02) 10px,
+          rgba(22,224,189,0.02) 20px
+        );
+      background-size: 100%, 30px 30px;
+    }
+    
+    /* Service areas with gradient */
+    .services[style*="background"] {
+      background: 
+        linear-gradient(135deg, rgba(255,45,125,0.05), transparent),
+        var(--color-off-white-dark) !important;
+    }
+  </style>
+  
   <!-- Google Fonts for Retro Theme -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -236,14 +360,36 @@
               <a href="tel:+16239310846" class="form__button form__button--secondary">
                 Call (623) 931-0846
               </a>
-              <a href="/service-areas/" class="form__button form__button--outline">
-                View Service Areas
+              <a href="/services/" class="form__button form__button--outline">
+                Our Services
+              </a>
+              <a href="/about/" class="form__button form__button--outline">
+                About Us
               </a>
             </div>
           </div>
         </div>
       </section>
     </div>
+
+    <!-- Video Showcase Section -->
+    <section class="video-showcase" aria-labelledby="video-heading">
+      <div class="container">
+        <div class="video-showcase__header">
+          <h2 id="video-heading" class="video-showcase__title">See Us in Action</h2>
+          <p class="video-showcase__subtitle">40+ Years of Professional Service in the West Valley</p>
+        </div>
+        
+        <div class="video-showcase__wrapper">
+          <lite-youtube videoid="UJlJ_Ep1fOc" params="rel=0&modestbranding=1"
+                        style="--lite-yt-aspect-ratio:56.25%;background-color:#000;">
+            <a href="https://youtube.com/watch?v=UJlJ_Ep1fOc" class="lty-playbtn" title="Play Video">
+              <span class="lyt-visually-hidden">Play Yzagere Enterprises introduction video</span>
+            </a>
+          </lite-youtube>
+        </div>
+      </div>
+    </section>
 
     <!-- Services Section -->
     <section class="services" aria-labelledby="services-heading">

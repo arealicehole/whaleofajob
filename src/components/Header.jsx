@@ -25,7 +25,7 @@ const Header = () => {
       <div className="container">
         <div className="nav__container">
           <a href="/" className="nav__logo" aria-label="Yzagere Enterprises Home">
-            <img src="/images/logo.webp" alt="Yzagere Enterprises" className="nav__logo-img" />
+            <img src="/images/logo.png" alt="Yzagere Enterprises" className="nav__logo-img" />
           </a>
           
           <button 

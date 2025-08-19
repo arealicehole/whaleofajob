@@ -189,7 +189,43 @@
     }
     
     .typography-section--values {
-      background: var(--color-off-white);
+      background: #000000;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* CRT scanline effect for values section */
+    .typography-section--values::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(22, 224, 189, 0.03) 2px,
+        rgba(22, 224, 189, 0.03) 4px
+      );
+      z-index: 0;
+      pointer-events: none;
+      animation: scanlines 8s linear infinite;
+    }
+    
+    @keyframes scanlines {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(10px);
+      }
+    }
+    
+    .typography-section--values .typography-grid {
+      position: relative;
+      z-index: 1;
     }
     
     .typography-section--team {
@@ -234,6 +270,17 @@
       text-transform: uppercase;
     }
     
+    /* Override styles for values section with dark background */
+    .typography-section--values .typography__title {
+      color: var(--neon-pink);
+      text-shadow: 0 0 20px currentColor;
+    }
+    
+    .typography-section--values .typography__subtitle {
+      color: var(--neon-cyan);
+      opacity: 0.9;
+    }
+    
     .typography__content {
       display: grid;
       gap: 3rem;
@@ -270,6 +317,26 @@
       line-height: 1.6;
       color: var(--color-dark);
       opacity: 0.8;
+    }
+    
+    /* Override item styles for values section with dark background */
+    .typography-section--values .typography__item {
+      border-left-color: var(--neon-cyan);
+    }
+    
+    .typography-section--values .typography__item::before {
+      background: var(--neon-cyan);
+      box-shadow: 0 0 10px rgba(22, 224, 189, 0.8);
+    }
+    
+    .typography-section--values .typography__item-title {
+      color: var(--neon-cyan);
+      text-shadow: 0 0 5px rgba(22, 224, 189, 0.3);
+    }
+    
+    .typography-section--values .typography__item-text {
+      color: var(--color-off-white);
+      opacity: 0.9;
     }
     
     /* Why Choose Us Section - Completely Different Style */
@@ -714,11 +781,11 @@
     </section>
 
     <!-- Call to Action Section -->
-    <section class="services" style="background: var(--color-primary); color: white;" aria-labelledby="cta-heading">
+    <section class="services" style="background: linear-gradient(135deg, rgba(255, 45, 125, 0.1), transparent); color: white;" aria-labelledby="cta-heading">
       <div class="container">
         <div class="services__header">
-          <h2 id="cta-heading" class="services__title" style="color: white;">Ready to Experience the Yzagere Difference?</h2>
-          <p class="services__subtitle" style="color: white; opacity: 0.9;">
+          <h2 id="cta-heading" class="services__title">Ready to Experience the Yzagere Difference?</h2>
+          <p class="services__subtitle">
             Join thousands of satisfied customers who trust us with their home service needs. 
             Experience the quality and reliability that three generations have built.
           </p>
@@ -726,16 +793,16 @@
         
         <div style="text-align: center;">
           <div class="hero__actions" style="justify-content: center;">
-            <a href="/contact/" class="form__button" style="background: white; color: var(--color-primary);">
+            <a href="/contact/" class="form__button">
               Get Free Estimate
             </a>
-            <a href="tel:+16239310846" class="form__button form__button--outline" style="border-color: white; color: white;">
+            <a href="tel:+16239310846" class="form__button form__button--secondary">
               Call (623) 931-0846
             </a>
           </div>
           
           <div style="margin-top: 2rem;">
-            <p style="color: white; opacity: 0.9;">
+            <p class="text-muted">
               <strong>Sprinkler Repair • Small Engine Repair • Junk Hauling • Landscaping</strong><br>
               Monday-Friday 5:00 AM - 5:00 PM • Serving the West Valley Since 1983
             </p>

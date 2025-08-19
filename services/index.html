@@ -187,6 +187,13 @@
       justify-content: center;
       font-size: var(--font-size-6xl);
       text-shadow: 0 0 30px currentColor;
+      overflow: hidden;
+    }
+    
+    .tab-panel__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     
     /* Service Areas Section */
@@ -316,8 +323,8 @@
         <div class="tabs__content active" role="tabpanel" id="sprinkler-panel" aria-labelledby="sprinkler-tab">
           <div class="tab-panel">
             <div class="tab-panel__content">
-              <h2>Sprinkler & Irrigation Repair</h2>
-              <p class="text-large">Call us the "Sprinkler Doctors!" With over 40 years of experience, we diagnose and fix all irrigation issues quickly and affordably.</p>
+              <h2>Sprinkler Repair</h2>
+              <p class="text-large">Call us the "Sprinkler Doctors!" With over 40 years of experience, we diagnose and fix all sprinkler issues quickly and affordably.</p>
               
               <ul class="service-list">
                 <li>Valve repair and replacement</li>
@@ -332,7 +339,12 @@
               <p><strong>Common Issues We Fix:</strong> Low water pressure, broken pipes, clogged nozzles, timer malfunctions, zone problems, and water waste issues.</p>
             </div>
             <div class="tab-panel__image">
-              💧
+              <img src="/images/sprinkler-repair-service-glendale-az.jpg" 
+                   alt="Professional sprinkler repair service in Glendale Arizona" 
+                   loading="lazy"
+                   width="600"
+                   height="400"
+                   style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg);">
             </div>
           </div>
         </div>

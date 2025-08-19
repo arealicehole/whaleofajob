@@ -18,10 +18,12 @@ const ContactForm = () => {
   // Service options for dropdown
   const serviceOptions = [
     { value: '', label: 'Select a service (optional)' },
-    { value: 'Sprinkler/Irrigation Repair', label: 'Sprinkler/Irrigation Repair' },
+    { value: 'Sprinkler Repair', label: 'Sprinkler Repair' },
     { value: 'Small Engine Repair', label: 'Small Engine Repair' },
     { value: 'Junk Hauling', label: 'Junk Hauling' },
-    { value: 'Landscaping', label: 'Landscaping' }
+    { value: 'Landscaping', label: 'Landscaping & Desert Maintenance' },
+    { value: 'Multiple Services', label: 'Multiple Services' },
+    { value: 'Other', label: 'Other / Not Sure' }
   ];
 
   // Validate individual field

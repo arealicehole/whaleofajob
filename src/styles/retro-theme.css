@@ -125,32 +125,47 @@ h3 {
 }
 
 .nav__link {
-  color: var(--neon-cyan);
+  color: #ffffff;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   transition: all 0.3s ease;
   position: relative;
+  padding: 0.5rem 1rem;
+  text-shadow: none;
+  background: none;
+  border-radius: 0;
 }
 
+/* Remove the underline effect */
 .nav__link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--neon-pink), var(--neon-cyan));
-  transition: width 0.3s ease;
+  display: none;
 }
 
+/* Hover state - red glow like the logo */
 .nav__link:hover {
   color: var(--neon-pink);
-  text-shadow: var(--glow-pink);
+  text-shadow: 0 0 10px rgba(255, 45, 125, 0.8), 
+               0 0 20px rgba(255, 45, 125, 0.6),
+               0 0 30px rgba(255, 45, 125, 0.4);
+  background: none;
 }
 
-.nav__link:hover::after {
-  width: 100%;
+/* Active state - green glow like the logo default */
+.nav__link--active {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(22, 224, 189, 0.8),
+               0 0 20px rgba(22, 224, 189, 0.6),
+               0 0 30px rgba(22, 224, 189, 0.4);
+  background: none;
+}
+
+/* Active hover state - can still turn red on hover */
+.nav__link--active:hover {
+  color: var(--neon-pink);
+  text-shadow: 0 0 10px rgba(255, 45, 125, 0.8),
+               0 0 20px rgba(255, 45, 125, 0.6),
+               0 0 30px rgba(255, 45, 125, 0.4);
 }
 
 /* Retro Hero Section */

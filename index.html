@@ -76,9 +76,38 @@
     .video-showcase {
       padding-top: var(--space-3xl);
       padding-bottom: 0;
-      background: transparent;
+      background: #000000;
       position: relative;
       overflow: hidden;
+    }
+    
+    /* CRT scanline effect */
+    .video-showcase::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(22, 224, 189, 0.03) 2px,
+        rgba(22, 224, 189, 0.03) 4px
+      );
+      z-index: 0;
+      pointer-events: none;
+      animation: scanlines 8s linear infinite;
+    }
+    
+    @keyframes scanlines {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(10px);
+      }
     }
     
     /* Header above video */
@@ -86,6 +115,8 @@
       text-align: center;
       margin-bottom: var(--space-2xl);
       padding: 0 var(--space-xl);
+      position: relative;
+      z-index: 1;
     }
     
     .video-showcase__title {
@@ -103,6 +134,7 @@
       position: relative;
       width: 100%;
       overflow: hidden;
+      z-index: 1;
     }
     
     /* Background video container - maintains 16:9 aspect ratio */
@@ -144,8 +176,8 @@
     /* Subtitle overlay in top left */
     .video-subtitle-overlay {
       position: absolute;
-      top: var(--space-xl);
-      left: var(--space-xl);
+      top: calc(var(--space-xl) + 0.5rem);
+      left: calc(var(--space-xl) + 1rem);
       z-index: 2;
     }
     
@@ -220,9 +252,15 @@
     /* Service Areas Section */
     .service-areas {
       position: relative;
-      padding: var(--space-4xl) 0;
+      padding: 0 !important;
+      margin: 0 !important;
       background: var(--dark-surface);
       overflow: hidden;
+    }
+    
+    /* Add padding back only to the content */
+    .service-areas .container {
+      padding: var(--space-4xl) var(--container-padding);
     }
     
     .service-areas::before {
@@ -339,18 +377,52 @@
     }
     
     
-    /* Services section with subtle pattern */
+    /* Services section with CRT scanlines */
     .services {
-      background-image: 
-        linear-gradient(180deg, transparent, rgba(22,224,189,0.02)),
-        repeating-linear-gradient(
-          45deg,
-          transparent,
-          transparent 10px,
-          rgba(22,224,189,0.02) 10px,
-          rgba(22,224,189,0.02) 20px
-        );
-      background-size: 100%, 30px 30px;
+      background: #000000;
+      position: relative;
+      overflow: hidden;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    
+    /* Add padding back only to the content */
+    .services .container {
+      padding: var(--space-4xl) var(--container-padding);
+    }
+    
+    .services::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(22, 224, 189, 0.03) 2px,
+        rgba(22, 224, 189, 0.03) 4px
+      );
+      z-index: 0;
+      pointer-events: none;
+      animation: scanlines-alt 10s linear infinite;
+    }
+    
+    /* Ensure content appears above scanlines */
+    .services > .container {
+      position: relative;
+      z-index: 1;
+    }
+    
+    @keyframes scanlines-alt {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(10px);
+      }
     }
     
     /* Service areas with gradient */

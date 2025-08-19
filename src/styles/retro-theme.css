@@ -168,6 +168,60 @@ h3 {
                0 0 30px rgba(255, 45, 125, 0.4);
 }
 
+/* Wire frame buttons for bottom sections */
+.service-areas__cta .form__button {
+  background: transparent;
+  border: 2px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  box-shadow: 0 0 10px rgba(22, 224, 189, 0.3);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+}
+
+/* Wire frame buttons for "Ready to Get Started" section */
+.services .form__button {
+  background: transparent;
+  border: 2px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  box-shadow: 0 0 10px rgba(22, 224, 189, 0.3);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  padding: 0.875rem 2rem;
+  display: inline-block;
+  width: auto;
+  white-space: nowrap;
+}
+
+.service-areas__cta .form__button:hover,
+.services .form__button:hover {
+  background: transparent;
+  border-color: var(--neon-pink);
+  color: var(--neon-pink);
+  box-shadow: 0 0 20px rgba(255, 45, 125, 0.6),
+              0 0 30px rgba(255, 45, 125, 0.4);
+  transform: scale(1.05);
+}
+
+/* Secondary button variant */
+.service-areas__cta .form__button--secondary,
+.services .form__button--secondary {
+  border-color: var(--neon-pink);
+  color: var(--neon-pink);
+  box-shadow: 0 0 10px rgba(255, 45, 125, 0.3);
+}
+
+.service-areas__cta .form__button--secondary:hover,
+.services .form__button--secondary:hover {
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(22, 224, 189, 0.6),
+              0 0 30px rgba(22, 224, 189, 0.4);
+}
+
 /* Retro Hero Section */
 .hero {
   background: var(--dark-bg);

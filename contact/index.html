@@ -184,37 +184,40 @@
   <!-- Skip to main content for accessibility -->
   <a href="#main-content" class="sr-only">Skip to main content</a>
 
-  <!-- Navigation -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="container">
-      <div class="nav__container">
-        <a href="/" class="nav__logo" aria-label="Yzagere Enterprises Home">
-          Yzagere Enterprises
-        </a>
-        
-        <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="nav__toggle-line"></span>
-          <span class="nav__toggle-line"></span>
-          <span class="nav__toggle-line"></span>
-        </button>
-        
-        <ul class="nav__list" role="list">
-          <li class="nav__item">
-            <a href="/" class="nav__link">Home</a>
-          </li>
-          <li class="nav__item">
-            <a href="/services/" class="nav__link">Services</a>
-          </li>
-          <li class="nav__item">
-            <a href="/about/" class="nav__link">About</a>
-          </li>
-          <li class="nav__item">
-            <a href="/contact/" class="nav__link nav__link--active" aria-current="page">Contact</a>
-          </li>
-        </ul>
+  <!-- Header Mount Point -->
+  <div id="header-root">
+    <!-- Fallback navigation for no-JS -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="container">
+        <div class="nav__container">
+          <a href="/" class="nav__logo" aria-label="Yzagere Enterprises Home">
+            <img src="/images/logo.png" alt="Yzagere Enterprises" class="nav__logo-img">
+          </a>
+          
+          <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="nav__toggle-line"></span>
+            <span class="nav__toggle-line"></span>
+            <span class="nav__toggle-line"></span>
+          </button>
+          
+          <ul class="nav__list" role="list">
+            <li class="nav__item">
+              <a href="/" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="/services/" class="nav__link">Services</a>
+            </li>
+            <li class="nav__item">
+              <a href="/about/" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="/contact/" class="nav__link nav__link--active" aria-current="page">Contact</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
 
   <!-- Main Content -->
   <main id="main-content">

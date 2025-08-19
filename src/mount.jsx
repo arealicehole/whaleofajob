@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import Hero from './components/Hero.jsx';
 import RetroHero from './components/RetroHero.jsx';
 import ContactForm from './components/ContactForm.jsx';
+import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 
 /**
@@ -58,6 +59,9 @@ const mountComponent = (Component, elementId, componentName = 'Component') => {
 const initializeReactIslands = () => {
   console.log('Initializing React islands...');
 
+  // Mount Header component on all pages
+  mountComponent(Header, 'header-root', 'Header');
+
   // Mount Hero component if container exists (check for retro version first)
   if (document.getElementById('retro-hero-root')) {
     mountComponent(RetroHero, 'retro-hero-root', 'RetroHero');
@@ -79,7 +83,9 @@ const initializeReactIslands = () => {
  */
 const cleanupReactIslands = () => {
   const containers = [
+    document.getElementById('header-root'),
     document.getElementById('hero-root'),
+    document.getElementById('retro-hero-root'),
     document.getElementById('contact-form-root'),
     document.getElementById('footer-root')
   ].filter(Boolean);

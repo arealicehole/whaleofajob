@@ -74,50 +74,147 @@
     
     /* Video showcase section */
     .video-showcase {
-      padding: var(--space-4xl) 0;
-      background: var(--dark-surface);
+      padding-top: var(--space-3xl);
+      padding-bottom: 0;
+      background: transparent;
       position: relative;
       overflow: hidden;
     }
     
-    .video-showcase::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: var(--grid-pattern);
-      opacity: 0.1;
-      animation: grid-move 20s linear infinite;
-    }
-    
+    /* Header above video */
     .video-showcase__header {
       text-align: center;
-      margin-bottom: var(--space-3xl);
-      position: relative;
-      z-index: 1;
+      margin-bottom: var(--space-2xl);
+      padding: 0 var(--space-xl);
     }
     
     .video-showcase__title {
-      font-size: var(--font-size-4xl);
+      font-size: clamp(2.5rem, 6vw, 4rem);
       color: var(--neon-pink);
-      text-shadow: 0 0 20px currentColor;
-      margin-bottom: var(--space-md);
+      text-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+      margin: 0;
+      animation: neon-flicker 2s infinite alternate;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    /* Video wrapper container */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    /* Background video container - maintains 16:9 aspect ratio */
+    .video-background {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      background: #000;
+    }
+    
+    #youtube-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    
+    /* Video overlay for button readability */
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        transparent 0%,
+        transparent 60%,
+        rgba(0, 0, 0, 0.4) 80%,
+        rgba(0, 0, 0, 0.6) 100%
+      );
+      z-index: 1;
+    }
+    
+    /* Subtitle overlay in top left */
+    .video-subtitle-overlay {
+      position: absolute;
+      top: var(--space-xl);
+      left: var(--space-xl);
+      z-index: 2;
     }
     
     .video-showcase__subtitle {
       font-size: var(--font-size-xl);
-      color: var(--neon-cyan);
-      opacity: 0.9;
+      color: #ffffff;
+      text-shadow: 0 0 15px rgba(22, 224, 189, 0.8),
+                   0 0 30px rgba(22, 224, 189, 0.6),
+                   0 0 45px rgba(22, 224, 189, 0.4);
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 0.05em;
     }
     
-    .video-showcase__wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 var(--space-xl);
-      position: relative;
-      z-index: 1;
+    /* Buttons overlay - centered near bottom */
+    .video-buttons-overlay {
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
       display: flex;
       justify-content: center;
-      align-items: center;
+      gap: var(--space-xl);
+    }
+    
+    /* Larger buttons */
+    .btn--large {
+      font-size: 1.25rem;
+      padding: 1rem 2.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    .btn--glow {
+      box-shadow: 0 0 20px currentColor;
+      transition: all 0.3s ease;
+    }
+    
+    .btn--glow:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px currentColor, 0 0 50px currentColor;
+    }
+    
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .video-buttons-overlay {
+        bottom: 5%;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-md);
+      }
+      
+      .video-subtitle-overlay {
+        top: var(--space-md);
+        left: var(--space-md);
+      }
+      
+      .video-showcase__subtitle {
+        font-size: 1rem;
+      }
+      
+      .btn--large {
+        font-size: 1rem;
+        padding: 0.875rem 2rem;
+        width: 100%;
+        max-width: 280px;
+      }
     }
     
     /* Service Areas Section */
@@ -241,27 +338,6 @@
       }
     }
     
-    /* Custom lite-youtube styling */
-    lite-youtube {
-      width: 100%;
-      max-width: 1000px;
-      border: 2px solid var(--neon-cyan);
-      border-radius: var(--radius-lg);
-      box-shadow: 0 0 30px rgba(22,224,189,0.3);
-      transition: all 0.3s ease;
-      background-color: #000;
-    }
-    
-    lite-youtube:hover {
-      box-shadow: 0 0 50px rgba(255,45,125,0.5);
-      transform: scale(1.02);
-      border-color: var(--neon-pink);
-    }
-    
-    lite-youtube .lty-playbtn {
-      border: 2px solid var(--neon-pink);
-      background-color: rgba(13,13,13,0.8);
-    }
     
     /* Services section with subtle pattern */
     .services {
@@ -501,22 +577,30 @@
       </section>
     </div>
 
-    <!-- Video Showcase Section -->
-    <section class="video-showcase" aria-labelledby="video-heading">
-      <div class="container">
-        <div class="video-showcase__header">
-          <h2 id="video-heading" class="video-showcase__title">See Us in Action</h2>
+    <!-- Video Showcase Section with Background Video -->
+    <section class="video-showcase video-background-section" aria-labelledby="video-heading">
+      <!-- Title Above Video -->
+      <div class="video-showcase__header">
+        <h2 id="video-heading" class="video-showcase__title">See Us in Action</h2>
+      </div>
+      
+      <!-- Video Container with Buttons Overlay -->
+      <div class="video-wrapper">
+        <!-- YouTube Background Video -->
+        <div class="video-background">
+          <div id="youtube-background"></div>
+          <div class="video-overlay"></div>
+        </div>
+        
+        <!-- Subtitle Overlay in Top Left -->
+        <div class="video-subtitle-overlay">
           <p class="video-showcase__subtitle">40+ Years of Professional Service in the West Valley</p>
         </div>
         
-        <div class="video-showcase__wrapper">
-          <lite-youtube videoid="UJlJ_Ep1fOc" params="rel=0&modestbranding=1&autoplay=1&mute=1"
-                        style="--lite-yt-aspect-ratio:56.25%;background-color:#000;"
-                        autoload>
-            <a href="https://youtube.com/watch?v=UJlJ_Ep1fOc" class="lty-playbtn" title="Play Video">
-              <span class="lyt-visually-hidden">Play Yzagere Enterprises introduction video</span>
-            </a>
-          </lite-youtube>
+        <!-- Buttons Overlay on Video -->
+        <div class="video-buttons-overlay">
+          <a href="/contact/" class="btn btn--primary btn--glow btn--large">Get Your Free Quote</a>
+          <a href="/services/" class="btn btn--secondary btn--glow btn--large">View All Services</a>
         </div>
       </div>
     </section>
@@ -736,5 +820,54 @@
   <!-- Scripts -->
   <script src="/assets/vendor/lite-yt-embed.js" defer></script>
   <script type="module" src="/src/mount.jsx"></script>
+  
+  <!-- YouTube Background Video Script -->
+  <script>
+    // YouTube IFrame API
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('youtube-background', {
+        videoId: 'UJlJ_Ep1fOc',
+        playerVars: {
+          autoplay: 1,
+          loop: 1,
+          controls: 0,
+          showinfo: 0,
+          mute: 1,
+          modestbranding: 1,
+          playlist: 'UJlJ_Ep1fOc', // Required for loop to work
+          playsinline: 1,
+          rel: 0,
+          iv_load_policy: 3,
+          cc_load_policy: 0,
+          fs: 0,
+          disablekb: 1
+        },
+        events: {
+          onReady: onPlayerReady,
+          onStateChange: onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      event.target.mute(); // Ensure muted for autoplay
+      event.target.playVideo();
+      // Set quality to reduce bandwidth
+      event.target.setPlaybackQuality('hd720');
+    }
+
+    function onPlayerStateChange(event) {
+      // If video ends, restart it (backup for loop)
+      if (event.data === YT.PlayerState.ENDED) {
+        player.playVideo();
+      }
+    }
+  </script>
 </body>
 </html>

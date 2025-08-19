@@ -120,6 +120,127 @@
       align-items: center;
     }
     
+    /* Service Areas Section */
+    .service-areas {
+      position: relative;
+      padding: var(--space-4xl) 0;
+      background: var(--dark-surface);
+      overflow: hidden;
+    }
+    
+    .service-areas::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255, 45, 125, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(22, 224, 189, 0.15) 0%, transparent 50%),
+        linear-gradient(180deg, transparent 0%, rgba(255, 45, 125, 0.05) 50%, transparent 100%);
+      animation: float 20s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    .service-areas__header {
+      text-align: center;
+      margin-bottom: var(--space-3xl);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .service-areas__title {
+      font-size: var(--font-size-4xl);
+      color: var(--neon-pink);
+      text-shadow: 0 0 20px currentColor;
+      margin-bottom: var(--space-md);
+    }
+    
+    .service-areas__subtitle {
+      font-size: var(--font-size-xl);
+      color: var(--neon-cyan);
+      opacity: 0.9;
+    }
+    
+    .service-areas__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-lg);
+      max-width: 1000px;
+      margin: 0 auto var(--space-3xl);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .service-areas__city {
+      color: var(--neon-cyan);
+      font-size: var(--font-size-lg);
+      font-weight: 600;
+      text-align: center;
+      padding: var(--space-md) var(--space-lg);
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid transparent;
+      border-radius: var(--radius-lg);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .service-areas__city::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(45deg, transparent, rgba(22, 224, 189, 0.1), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+    
+    .service-areas__city:hover {
+      color: var(--neon-pink);
+      text-shadow: 0 0 10px currentColor;
+      border-color: var(--neon-pink);
+      background: rgba(255, 45, 125, 0.1);
+      transform: scale(1.05);
+    }
+    
+    .service-areas__city:hover::before {
+      transform: translateX(100%);
+    }
+    
+    .service-areas__cta {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    @media (max-width: 1024px) {
+      .service-areas__grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .service-areas__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .service-areas__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+      }
+      
+      .service-areas__city {
+        font-size: var(--font-size-base);
+        padding: var(--space-sm) var(--space-md);
+      }
+    }
+    
     /* Custom lite-youtube styling */
     lite-youtube {
       width: 100%;
@@ -409,153 +530,124 @@
         
         <div class="services__grid">
           <!-- Sprinkler Repair Service -->
-          <article class="card services__item">
-            <img src="/images/service-sprinkler-repair.webp" 
-                 alt="Professional sprinkler system repair" 
-                 class="services__image"
-                 loading="lazy"
-                 width="600"
-                 height="400">
-            <div class="card__header">
-              <div class="services__icon" aria-hidden="true">💧</div>
-              <h3 class="card__title services__item-title">Sprinkler & Irrigation Repair</h3>
-            </div>
-            <div class="card__content">
-              <p class="services__item-text">
-                Call us the "sprinkler doctors!" Professional repair for sprinkler systems, drip irrigation, 
-                valves, timers, and emergency leak detection. We keep your landscape healthy year-round.
-              </p>
-            </div>
-            <div class="card__footer">
-              <a href="/services/#sprinkler-panel" class="form__button form__button--outline">
-                Learn More
-              </a>
-            </div>
-          </article>
+          <a href="/services/#sprinkler-panel" class="services__link">
+            <article class="card services__item">
+              <img src="/images/service-sprinkler-repair.webp" 
+                   alt="Professional sprinkler system repair" 
+                   class="services__image"
+                   loading="lazy"
+                   width="600"
+                   height="400">
+              <div class="card__header">
+                <div class="services__icon" aria-hidden="true">💧</div>
+                <h3 class="card__title services__item-title">Sprinkler & Irrigation Repair</h3>
+              </div>
+              <div class="card__content">
+                <p class="services__item-text">
+                  Call us the "sprinkler doctors!" Professional repair for sprinkler systems, drip irrigation, 
+                  valves, timers, and emergency leak detection. We keep your landscape healthy year-round.
+                </p>
+              </div>
+            </article>
+          </a>
 
           <!-- Small Engine Repair Service -->
-          <article class="card services__item">
-            <img src="/images/service-small-engine.webp" 
-                 alt="Small engine and lawn mower repair" 
-                 class="services__image"
-                 loading="lazy"
-                 width="600"
-                 height="400">
-            <div class="card__header">
-              <div class="services__icon" aria-hidden="true">🔧</div>
-              <h3 class="card__title services__item-title">Small Engine Repair</h3>
-            </div>
-            <div class="card__content">
-              <p class="services__item-text">
-                40+ years of experience repairing lawn mowers, trimmers, blowers, and small equipment. 
-                We service all makes and models with quality parts and expert craftsmanship.
-              </p>
-            </div>
-            <div class="card__footer">
-              <a href="/services/#engine-panel" class="form__button form__button--outline">
-                Learn More
-              </a>
-            </div>
-          </article>
+          <a href="/services/#engine-panel" class="services__link">
+            <article class="card services__item">
+              <img src="/images/service-small-engine.webp" 
+                   alt="Small engine and lawn mower repair" 
+                   class="services__image"
+                   loading="lazy"
+                   width="600"
+                   height="400">
+              <div class="card__header">
+                <div class="services__icon" aria-hidden="true">🔧</div>
+                <h3 class="card__title services__item-title">Small Engine Repair</h3>
+              </div>
+              <div class="card__content">
+                <p class="services__item-text">
+                  40+ years of experience repairing lawn mowers, trimmers, blowers, and small equipment. 
+                  We service all makes and models with quality parts and expert craftsmanship.
+                </p>
+              </div>
+            </article>
+          </a>
 
           <!-- Junk Hauling Service -->
-          <article class="card services__item">
-            <img src="/images/service-junk-hauling.webp" 
-                 alt="Professional junk hauling and removal" 
-                 class="services__image"
-                 loading="lazy"
-                 width="600"
-                 height="400">
-            <div class="card__header">
-              <div class="services__icon" aria-hidden="true">🚛</div>
-              <h3 class="card__title services__item-title">Junk Hauling</h3>
-            </div>
-            <div class="card__content">
-              <p class="services__item-text">
-                From single item pickup to full property cleanouts, we handle all your junk removal needs. 
-                Same-day service available with eco-friendly disposal practices.
-              </p>
-            </div>
-            <div class="card__footer">
-              <a href="/services/#junk-panel" class="form__button form__button--outline">
-                Learn More
-              </a>
-            </div>
-          </article>
+          <a href="/services/#junk-panel" class="services__link">
+            <article class="card services__item">
+              <img src="/images/service-junk-hauling.webp" 
+                   alt="Professional junk hauling and removal" 
+                   class="services__image"
+                   loading="lazy"
+                   width="600"
+                   height="400">
+              <div class="card__header">
+                <div class="services__icon" aria-hidden="true">🚛</div>
+                <h3 class="card__title services__item-title">Junk Hauling</h3>
+              </div>
+              <div class="card__content">
+                <p class="services__item-text">
+                  From single item pickup to full property cleanouts, we handle all your junk removal needs. 
+                  Same-day service available with eco-friendly disposal practices.
+                </p>
+              </div>
+            </article>
+          </a>
 
           <!-- Landscaping Service -->
-          <article class="card services__item">
-            <img src="/images/service-landscaping.webp" 
-                 alt="Arizona desert landscaping and maintenance" 
-                 class="services__image"
-                 loading="lazy"
-                 width="600"
-                 height="400">
-            <div class="card__header">
-              <div class="services__icon" aria-hidden="true">🌵</div>
-              <h3 class="card__title services__item-title">Landscaping & Desert Maintenance</h3>
-            </div>
-            <div class="card__content">
-              <p class="services__item-text">
-                Professional landscaping and desert maintenance services designed for Arizona's unique climate. 
-                We help maintain your outdoor spaces year-round.
-              </p>
-            </div>
-            <div class="card__footer">
-              <a href="/about/" class="form__button form__button--outline">
-                Learn More
-              </a>
-            </div>
-          </article>
+          <a href="/about/" class="services__link">
+            <article class="card services__item">
+              <img src="/images/service-landscaping.webp" 
+                   alt="Arizona desert landscaping and maintenance" 
+                   class="services__image"
+                   loading="lazy"
+                   width="600"
+                   height="400">
+              <div class="card__header">
+                <div class="services__icon" aria-hidden="true">🌵</div>
+                <h3 class="card__title services__item-title">Landscaping & Desert Maintenance</h3>
+              </div>
+              <div class="card__content">
+                <p class="services__item-text">
+                  Professional landscaping and desert maintenance services designed for Arizona's unique climate. 
+                  We help maintain your outdoor spaces year-round.
+                </p>
+              </div>
+            </article>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Service Areas Section -->
-    <section class="services" style="background: var(--color-off-white-dark);" aria-labelledby="areas-heading">
+    <section class="service-areas" aria-labelledby="areas-heading">
       <div class="container">
-        <div class="services__header">
-          <h2 id="areas-heading" class="services__title">Service Areas</h2>
-          <p class="services__subtitle">
+        <div class="service-areas__header">
+          <h2 id="areas-heading" class="service-areas__title">Service Areas</h2>
+          <p class="service-areas__subtitle">
             We proudly serve Glendale and the entire West Valley with fast, reliable service.
           </p>
         </div>
         
-        <div class="services__grid">
-          <div class="services__item">
-            <h3 class="services__item-title">Primary Service Areas</h3>
-            <ul class="services__item-text" style="text-align: left; list-style: disc; padding-left: 1.5rem;">
-              <li>Glendale</li>
-              <li>Peoria</li>
-              <li>Surprise</li>
-              <li>Goodyear</li>
-            </ul>
-          </div>
-          
-          <div class="services__item">
-            <h3 class="services__item-title">Extended Service Areas</h3>
-            <ul class="services__item-text" style="text-align: left; list-style: disc; padding-left: 1.5rem;">
-              <li>Avondale</li>
-              <li>Buckeye</li>
-              <li>Litchfield Park</li>
-              <li>El Mirage</li>
-            </ul>
-          </div>
-          
-          <div class="services__item">
-            <h3 class="services__item-title">Senior Communities</h3>
-            <ul class="services__item-text" style="text-align: left; list-style: disc; padding-left: 1.5rem;">
-              <li>Sun City</li>
-              <li>Sun City West</li>
-              <li>Tolleson</li>
-              <li>Waddell</li>
-            </ul>
-          </div>
+        <div class="service-areas__grid">
+          <div class="service-areas__city">Glendale</div>
+          <div class="service-areas__city">Peoria</div>
+          <div class="service-areas__city">Surprise</div>
+          <div class="service-areas__city">Goodyear</div>
+          <div class="service-areas__city">Avondale</div>
+          <div class="service-areas__city">Buckeye</div>
+          <div class="service-areas__city">Litchfield Park</div>
+          <div class="service-areas__city">El Mirage</div>
+          <div class="service-areas__city">Sun City</div>
+          <div class="service-areas__city">Sun City West</div>
+          <div class="service-areas__city">Tolleson</div>
+          <div class="service-areas__city">Waddell</div>
         </div>
         
-        <div style="text-align: center; margin-top: 2rem;">
-          <a href="/service-areas/" class="form__button">
-            View Complete Service Area Map
+        <div class="service-areas__cta">
+          <a href="/contact/" class="form__button">
+            Schedule Your Free Quote Today
           </a>
         </div>
       </div>
@@ -595,54 +687,41 @@
   <!-- Footer -->
   <footer class="footer" role="contentinfo">
     <div class="container">
-      <div class="footer__content">
-        <!-- Business Info -->
-        <section class="footer__section">
+      <div class="footer__content" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 3rem;">
+        <!-- Business Info - Left Side -->
+        <section class="footer__section" style="flex: 1; min-width: 250px;">
           <h3 class="footer__title">Yzagere Enterprises</h3>
           <div class="footer__text">
-            <p>Family-owned since 1983</p>
-            <p>5314 W Glendale Ave<br>Glendale, AZ 85301</p>
-            <p><a href="tel:+16239310846" class="footer__link">(623) 931-0846</a></p>
-            <p><a href="mailto:yzagere.enterprises@gmail.com" class="footer__link">yzagere.enterprises@gmail.com</a></p>
+            <p style="margin-bottom: 0.5rem;">Family-owned since 1983</p>
+            <p style="margin-bottom: 0.5rem;">5314 W Glendale Ave • Glendale, AZ 85301</p>
+            <p style="margin-bottom: 0.5rem;"><a href="tel:+16239310846" class="footer__link" style="font-size: 1.2rem; font-weight: bold;">(623) 931-0846</a></p>
           </div>
         </section>
 
-        <!-- Services -->
-        <section class="footer__section">
-          <h3 class="footer__title">Our Services</h3>
-          <ul class="footer__links">
-            <li><a href="/services/" class="footer__link">Our Services</a></li>
-            <li><a href="/about/" class="footer__link">Landscaping</a></li>
-          </ul>
+        <!-- Center - Hours & Service Areas -->
+        <section class="footer__section" style="flex: 1; min-width: 250px; text-align: center;">
+          <h3 class="footer__title">Hours & Coverage</h3>
+          <div class="footer__text">
+            <p style="margin-bottom: 0.5rem;"><strong>Mon-Fri:</strong> 5:00 AM - 5:00 PM</p>
+            <p style="margin-bottom: 0.5rem;"><strong>Emergency Service Available</strong></p>
+            <p style="color: var(--neon-cyan); margin-top: 1rem;">Serving All West Valley</p>
+          </div>
         </section>
 
-        <!-- Service Areas -->
-        <section class="footer__section">
-          <h3 class="footer__title">Service Areas</h3>
-          <ul class="footer__links">
-            <li><a href="/service-areas/" class="footer__link">Glendale</a></li>
-            <li><a href="/service-areas/" class="footer__link">Peoria</a></li>
-            <li><a href="/service-areas/" class="footer__link">Surprise</a></li>
-            <li><a href="/service-areas/" class="footer__link">Goodyear</a></li>
-            <li><a href="/service-areas/" class="footer__link">View All Areas</a></li>
-          </ul>
-        </section>
-
-        <!-- Company Info -->
-        <section class="footer__section">
-          <h3 class="footer__title">Company</h3>
-          <ul class="footer__links">
-            <li><a href="/about/" class="footer__link">About Us</a></li>
-            <li><a href="/contact/" class="footer__link">Contact</a></li>
-            <li><a href="/service-areas/" class="footer__link">Service Areas</a></li>
-            <li><a href="tel:+16239310846" class="footer__link">Emergency Service</a></li>
-          </ul>
+        <!-- Quick Links - Right Side -->
+        <section class="footer__section" style="flex: 1; min-width: 250px; text-align: right;">
+          <h3 class="footer__title">Quick Links</h3>
+          <div style="display: flex; gap: 1.5rem; justify-content: flex-end; flex-wrap: wrap;">
+            <a href="/services/" class="footer__link" style="font-size: 1.1rem;">Services</a>
+            <a href="/about/" class="footer__link" style="font-size: 1.1rem;">About</a>
+            <a href="/contact/" class="footer__link" style="font-size: 1.1rem; color: var(--neon-pink);">Get Quote</a>
+          </div>
         </section>
       </div>
 
       <div class="footer__bottom">
         <p class="footer__copyright">
-          &copy; 2024 Yzagere Enterprises. All rights reserved. | Licensed, Bonded & Insured
+          &copy; 2025 Yzagere Enterprises. All rights reserved. | Site powered by <a href="https://tricondigital.com" target="_blank" rel="noopener" style="color: var(--neon-cyan); text-decoration: none; transition: color 0.3s ease;">Tricon Digital</a>
         </p>
       </div>
     </div>

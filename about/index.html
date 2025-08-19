@@ -272,6 +272,128 @@
       opacity: 0.8;
     }
     
+    /* Why Choose Us Section - Completely Different Style */
+    .why-choose-us {
+      padding: var(--space-4xl) 0;
+      background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-surface) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .why-choose-us::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 45, 125, 0.1) 0%, transparent 70%);
+      animation: rotate 30s linear infinite;
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    .why-choose-us__header {
+      text-align: center;
+      margin-bottom: var(--space-3xl);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .why-choose-us__title {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      color: var(--neon-pink);
+      text-shadow: 0 0 30px currentColor;
+      margin-bottom: var(--space-md);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+    
+    .why-choose-us__subtitle {
+      font-family: 'Space Mono', monospace;
+      font-size: var(--font-size-xl);
+      color: var(--neon-cyan);
+      letter-spacing: 0.3em;
+    }
+    
+    .why-choose-us__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-xl);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-xl);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .why-choose-us__card {
+      background: rgba(13, 13, 13, 0.8);
+      border: 2px solid var(--neon-cyan);
+      border-radius: var(--radius-lg);
+      padding: var(--space-2xl);
+      text-align: center;
+      position: relative;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    
+    .why-choose-us__card::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(45deg, var(--neon-pink), var(--neon-cyan));
+      border-radius: var(--radius-lg);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .why-choose-us__card:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: var(--neon-pink);
+      box-shadow: 0 20px 40px rgba(255, 45, 125, 0.3);
+    }
+    
+    .why-choose-us__card:hover::before {
+      opacity: 0.5;
+      animation: glow 2s ease-in-out infinite;
+    }
+    
+    .why-choose-us__card--featured {
+      border-color: var(--neon-pink);
+      transform: scale(1.05);
+    }
+    
+    .why-choose-us__icon {
+      font-size: 3rem;
+      margin-bottom: var(--space-lg);
+      filter: drop-shadow(0 0 20px rgba(22, 224, 189, 0.5));
+    }
+    
+    .why-choose-us__card-title {
+      font-family: 'Orbitron', monospace;
+      font-size: var(--font-size-xl);
+      font-weight: 700;
+      color: var(--neon-cyan);
+      margin-bottom: var(--space-md);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    .why-choose-us__card-text {
+      font-family: 'Space Mono', monospace;
+      line-height: 1.6;
+      color: var(--color-off-white);
+      opacity: 0.9;
+      font-size: var(--font-size-base);
+    }
+    
     /* Mobile Responsiveness */
     @media (max-width: 768px) {
       .timeline::before {
@@ -552,46 +674,50 @@
       </div>
     </section>
 
-    <!-- Team Section - Asymmetric Typography (Reverse) -->
-    <section class="typography-section typography-section--team" aria-labelledby="team-heading">
-      <div class="typography-grid typography-grid--reverse">
-        <div class="typography__content">
-          <div class="typography__item">
-            <h3 class="typography__item-title">Skilled Technicians</h3>
-            <p class="typography__item-text">
+    <!-- Why Choose Us Section - Completely Different Style -->
+    <section class="why-choose-us" aria-labelledby="team-heading">
+      <div class="container">
+        <div class="why-choose-us__header">
+          <h2 id="team-heading" class="why-choose-us__title">Why Choose Us</h2>
+          <p class="why-choose-us__subtitle">Experience • Trust • Results</p>
+        </div>
+        
+        <div class="why-choose-us__grid">
+          <div class="why-choose-us__card">
+            <div class="why-choose-us__icon">👨‍🔧</div>
+            <h3 class="why-choose-us__card-title">Skilled Technicians</h3>
+            <p class="why-choose-us__card-text">
               Decades of combined experience in irrigation systems, small engine repair, 
               and waste management. Continuous training keeps skills sharp and current.
             </p>
           </div>
           
-          <div class="typography__item">
-            <h3 class="typography__item-title">Customer Service Excellence</h3>
-            <p class="typography__item-text">
+          <div class="why-choose-us__card why-choose-us__card--featured">
+            <div class="why-choose-us__icon">⭐</div>
+            <h3 class="why-choose-us__card-title">Customer Service Excellence</h3>
+            <p class="why-choose-us__card-text">
               From your first call to project completion, friendly and professional service. 
               We're here to answer questions and ensure your complete satisfaction.
             </p>
           </div>
           
-          <div class="typography__item">
-            <h3 class="typography__item-title">Family Leadership</h3>
-            <p class="typography__item-text">
+          <div class="why-choose-us__card">
+            <div class="why-choose-us__icon">👨‍👩‍👧‍👦</div>
+            <h3 class="why-choose-us__card-title">Family Leadership</h3>
+            <p class="why-choose-us__card-text">
               Led by the Yzagere family, we maintain the personal touch and accountability 
               that only comes from owners who care about their reputation and community.
             </p>
           </div>
           
-          <div class="typography__item">
-            <h3 class="typography__item-title">Licensed & Insured</h3>
-            <p class="typography__item-text">
+          <div class="why-choose-us__card">
+            <div class="why-choose-us__icon">✅</div>
+            <h3 class="why-choose-us__card-title">Licensed & Insured</h3>
+            <p class="why-choose-us__card-text">
               Full licensing and insurance protection gives you peace of mind. 
               We meet all legal requirements and maintain coverage for your protection.
             </p>
           </div>
-        </div>
-        
-        <div class="typography__header">
-          <h2 id="team-heading" class="typography__title">Why Choose Us</h2>
-          <p class="typography__subtitle">Experience • Trust • Results</p>
         </div>
       </div>
     </section>

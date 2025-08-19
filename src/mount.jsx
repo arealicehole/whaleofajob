@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import Hero from './components/Hero.jsx';
 import RetroHero from './components/RetroHero.jsx';
 import ContactForm from './components/ContactForm.jsx';
+import Footer from './components/Footer.jsx';
 
 /**
  * React Island Mounting System
@@ -67,6 +68,9 @@ const initializeReactIslands = () => {
   // Mount ContactForm component if container exists
   mountComponent(ContactForm, 'contact-form-root', 'ContactForm');
 
+  // Mount Footer component on all pages
+  mountComponent(Footer, 'footer-root', 'Footer');
+
   console.log('React islands initialization complete');
 };
 
@@ -76,7 +80,8 @@ const initializeReactIslands = () => {
 const cleanupReactIslands = () => {
   const containers = [
     document.getElementById('hero-root'),
-    document.getElementById('contact-form-root')
+    document.getElementById('contact-form-root'),
+    document.getElementById('footer-root')
   ].filter(Boolean);
 
   containers.forEach(container => {

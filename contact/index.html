@@ -417,63 +417,51 @@
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__content">
-        <!-- Business Info -->
-        <section class="footer__section">
-          <h3 class="footer__title">Yzagere Enterprises</h3>
-          <div class="footer__text">
-            <p>Family-owned since 1983</p>
-            <p>5314 W Glendale Ave<br>Glendale, AZ 85301</p>
-            <p><a href="tel:+16239310846" class="footer__link">(623) 931-0846</a></p>
-            <p><a href="mailto:yzagere.enterprises@gmail.com" class="footer__link">yzagere.enterprises@gmail.com</a></p>
-          </div>
-        </section>
+  <!-- Footer Mount Point -->
+  <div id="footer-root">
+    <!-- Fallback footer for no-JS -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer__content" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 3rem;">
+          <!-- Business Info - Left Side -->
+          <section class="footer__section" style="flex: 1; min-width: 250px;">
+            <h3 class="footer__title">Yzagere Enterprises</h3>
+            <div class="footer__text">
+              <p style="margin-bottom: 0.5rem;">Family-owned since 1983</p>
+              <p style="margin-bottom: 0.5rem;">5314 W Glendale Ave • Glendale, AZ 85301</p>
+              <p style="margin-bottom: 0.5rem;"><a href="tel:+16239310846" class="footer__link" style="font-size: 1.2rem; font-weight: bold;">(623) 931-0846</a></p>
+            </div>
+          </section>
 
-        <!-- Services -->
-        <section class="footer__section">
-          <h3 class="footer__title">Our Services</h3>
-          <ul class="footer__links">
-            <li><a href="/sprinkler-repair/" class="footer__link">Sprinkler Repair</a></li>
-            <li><a href="/small-engine-repair/" class="footer__link">Small Engine Repair</a></li>
-            <li><a href="/junk-hauling/" class="footer__link">Junk Hauling</a></li>
-            <li><a href="/about/" class="footer__link">Landscaping</a></li>
-          </ul>
-        </section>
+          <!-- Center - Hours & Service Areas -->
+          <section class="footer__section" style="flex: 1; min-width: 250px; text-align: center;">
+            <h3 class="footer__title">Hours & Coverage</h3>
+            <div class="footer__text">
+              <p style="margin-bottom: 0.5rem;"><strong>Mon-Fri:</strong> 5:00 AM - 5:00 PM</p>
+              <p style="margin-bottom: 0.5rem;"><strong>Emergency Service Available</strong></p>
+              <p style="color: var(--neon-cyan); margin-top: 1rem;">Serving All West Valley</p>
+            </div>
+          </section>
 
-        <!-- Service Areas -->
-        <section class="footer__section">
-          <h3 class="footer__title">Service Areas</h3>
-          <ul class="footer__links">
-            <li><a href="/service-areas/" class="footer__link">Glendale</a></li>
-            <li><a href="/service-areas/" class="footer__link">Peoria</a></li>
-            <li><a href="/service-areas/" class="footer__link">Surprise</a></li>
-            <li><a href="/service-areas/" class="footer__link">Goodyear</a></li>
-            <li><a href="/service-areas/" class="footer__link">View All Areas</a></li>
-          </ul>
-        </section>
+          <!-- Quick Links - Right Side -->
+          <section class="footer__section" style="flex: 1; min-width: 250px; text-align: right;">
+            <h3 class="footer__title">Quick Links</h3>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-end;">
+              <a href="/services/#engine-panel" class="footer__link" style="font-size: 1.1rem;">Small Engine Repair</a>
+              <a href="/services/#sprinkler-panel" class="footer__link" style="font-size: 1.1rem;">Sprinkler Repair</a>
+              <a href="/contact/" class="footer__link" style="font-size: 1.1rem; color: var(--neon-pink);">Get Quote</a>
+            </div>
+          </section>
+        </div>
 
-        <!-- Company Info -->
-        <section class="footer__section">
-          <h3 class="footer__title">Company</h3>
-          <ul class="footer__links">
-            <li><a href="/about/" class="footer__link">About Us</a></li>
-            <li><a href="/contact/" class="footer__link">Contact</a></li>
-            <li><a href="/service-areas/" class="footer__link">Service Areas</a></li>
-            <li><a href="tel:+16239310846" class="footer__link">Emergency Service</a></li>
-          </ul>
-        </section>
+        <div class="footer__bottom">
+          <p class="footer__copyright">
+            &copy; 2025 Yzagere Enterprises. All rights reserved. | Site powered by <a href="https://tricondigital.com" target="_blank" rel="noopener" style="color: var(--neon-cyan); text-decoration: none; transition: color 0.3s ease;">Tricon Digital</a>
+          </p>
+        </div>
       </div>
-
-      <div class="footer__bottom">
-        <p class="footer__copyright">
-          &copy; 2024 Yzagere Enterprises. All rights reserved. | Licensed, Bonded & Insured
-        </p>
-      </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <!-- Scripts -->
   <script type="module" src="/src/mount.jsx"></script>

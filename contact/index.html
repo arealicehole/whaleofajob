@@ -39,6 +39,47 @@
   
   <!-- Custom split-screen styles -->
   <style>
+    /* Main contact section with CRT scanlines */
+    .contact-main {
+      background: #000000;
+      position: relative;
+      overflow: hidden;
+      padding-top: 2rem;
+    }
+    
+    .contact-main::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(22, 224, 189, 0.03) 2px,
+        rgba(22, 224, 189, 0.03) 4px
+      );
+      z-index: 0;
+      pointer-events: none;
+      animation: scanlines 8s linear infinite;
+    }
+    
+    @keyframes scanlines {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(10px);
+      }
+    }
+    
+    .contact-main > .container {
+      position: relative;
+      z-index: 1;
+    }
+    
     .contact-split {
       display: grid;
       gap: 3rem;
@@ -296,7 +337,7 @@
   <!-- Main Content -->
   <main id="main-content">
     <!-- Contact Section - Split Screen Layout -->
-    <section class="services" style="padding-top: 2rem;" aria-labelledby="main-contact-heading">
+    <section class="services contact-main" aria-labelledby="main-contact-heading">
       <div class="container">
         <div class="services__header" style="text-align: center; margin-bottom: 3rem;">
           <h1 id="main-contact-heading" class="services__title" style="font-size: 2.5rem;">Contact Us</h1>

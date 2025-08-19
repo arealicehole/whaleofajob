@@ -286,17 +286,49 @@ h3 {
 
 .services__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-xl);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2xl);
   margin-top: var(--space-2xl);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .services__item {
   background: linear-gradient(135deg, rgba(255, 45, 125, 0.1), rgba(22, 224, 189, 0.1));
   border: 1px solid var(--neon-cyan);
-  padding: var(--space-xl);
+  padding: 0;
   position: relative;
   transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.services__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--neon-cyan);
+  filter: saturate(0.8) contrast(1.1);
+  transition: all 0.3s ease;
+}
+
+.services__item:hover .services__image {
+  filter: saturate(1.2) contrast(1.2) brightness(1.1);
+  transform: scale(1.05);
+}
+
+.services__item .card__header,
+.services__item .card__content,
+.services__item .card__footer {
+  padding: 0 var(--space-xl);
+}
+
+.services__item .card__header {
+  padding-top: var(--space-lg);
+}
+
+.services__item .card__footer {
+  padding-bottom: var(--space-xl);
 }
 
 .services__item::after {
@@ -370,6 +402,12 @@ h3 {
 }
 
 /* Responsive Adjustments */
+@media (max-width: 1023px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .hero__title {
     font-size: clamp(2.5rem, 12vw, 4rem);

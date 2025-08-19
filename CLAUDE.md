@@ -519,3 +519,10 @@ PRPs/
 ```
 
 Remember: This framework is about **one-pass implementation success through comprehensive context and validation**. Every PRP should contain the exact context for an AI agent to successfully implement working code in a single pass.
+
+- check Readme for the css info:  1. CSS Architecture section explaining the 4-layer system
+  2. Loading order showing exactly how CSS files cascade
+  3. How to make changes with specific examples for each file
+  4. Retro theme features documenting all the cool effects
+  5. Service grid layout explaining the responsive breakpoints
+  6. Quick reference for changing colors, layouts, and spacing

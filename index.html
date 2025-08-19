@@ -32,8 +32,8 @@
   <link rel="stylesheet" href="/src/styles/tokens.css">
   <link rel="stylesheet" href="/src/styles/base.css">
   <link rel="stylesheet" href="/src/styles/components.css">
-  <link rel="stylesheet" href="/src/styles/retro-theme.css">
   <link rel="stylesheet" href="/assets/vendor/lite-yt-embed.css">
+  <link rel="stylesheet" href="/src/styles/retro-theme.css">
   
   <!-- Custom homepage styles -->
   <style>
@@ -110,15 +110,20 @@
     }
     
     .video-showcase__wrapper {
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 var(--space-xl);
       position: relative;
       z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     
     /* Custom lite-youtube styling */
     lite-youtube {
+      width: 100%;
+      max-width: 1000px;
       border: 2px solid var(--neon-cyan);
       border-radius: var(--radius-lg);
       box-shadow: 0 0 30px rgba(22,224,189,0.3);
@@ -381,8 +386,9 @@
         </div>
         
         <div class="video-showcase__wrapper">
-          <lite-youtube videoid="UJlJ_Ep1fOc" params="rel=0&modestbranding=1"
-                        style="--lite-yt-aspect-ratio:56.25%;background-color:#000;">
+          <lite-youtube videoid="UJlJ_Ep1fOc" params="rel=0&modestbranding=1&autoplay=1&mute=1"
+                        style="--lite-yt-aspect-ratio:56.25%;background-color:#000;"
+                        autoload>
             <a href="https://youtube.com/watch?v=UJlJ_Ep1fOc" class="lty-playbtn" title="Play Video">
               <span class="lyt-visually-hidden">Play Yzagere Enterprises introduction video</span>
             </a>
@@ -404,6 +410,12 @@
         <div class="services__grid">
           <!-- Sprinkler Repair Service -->
           <article class="card services__item">
+            <img src="/images/service-sprinkler-repair.webp" 
+                 alt="Professional sprinkler system repair" 
+                 class="services__image"
+                 loading="lazy"
+                 width="600"
+                 height="400">
             <div class="card__header">
               <div class="services__icon" aria-hidden="true">💧</div>
               <h3 class="card__title services__item-title">Sprinkler & Irrigation Repair</h3>
@@ -423,6 +435,12 @@
 
           <!-- Small Engine Repair Service -->
           <article class="card services__item">
+            <img src="/images/service-small-engine.webp" 
+                 alt="Small engine and lawn mower repair" 
+                 class="services__image"
+                 loading="lazy"
+                 width="600"
+                 height="400">
             <div class="card__header">
               <div class="services__icon" aria-hidden="true">🔧</div>
               <h3 class="card__title services__item-title">Small Engine Repair</h3>
@@ -442,6 +460,12 @@
 
           <!-- Junk Hauling Service -->
           <article class="card services__item">
+            <img src="/images/service-junk-hauling.webp" 
+                 alt="Professional junk hauling and removal" 
+                 class="services__image"
+                 loading="lazy"
+                 width="600"
+                 height="400">
             <div class="card__header">
               <div class="services__icon" aria-hidden="true">🚛</div>
               <h3 class="card__title services__item-title">Junk Hauling</h3>
@@ -461,6 +485,12 @@
 
           <!-- Landscaping Service -->
           <article class="card services__item">
+            <img src="/images/service-landscaping.webp" 
+                 alt="Arizona desert landscaping and maintenance" 
+                 class="services__image"
+                 loading="lazy"
+                 width="600"
+                 height="400">
             <div class="card__header">
               <div class="services__icon" aria-hidden="true">🌵</div>
               <h3 class="card__title services__item-title">Landscaping & Desert Maintenance</h3>
